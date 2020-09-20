@@ -1,0 +1,241 @@
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eric - 個人檔案</title>
+<style>
+* {outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);}
+h1 {margin-left:12px; font-family: 'Open Sans Condensed', sans-serif;}
+
+h3 {margin-left:12px; font-family: 'Open Sans Condensed', sans-serif;}
+
+
+.line {width:calc(100%);height:2px;background:#e3e3e3;margin-top:20px;border-radius:9em;}
+
+body {background:#fff;}
+.img {width: auto;height: auto;max-width: 100%;max-height: 100%; position:absolute;top:50%;left:50%; transform:translate(-50%,-50%);border-radius:0px;display:none;}
+.pp {width: 100%;height: 100%;position:fixed;left:0px;top:0px;background:#000; display:none;}
+
+.barbg {width:calc(100% - 24px);height:50px;background:#fff;border-radius:10px; overflow:hidden;margin-top:30px; margin-left:12px;box-shadow:0 0 6px 1px rgba(0,0,0,0.2);}
+
+.barbox {color:#000;font-size:30px; position: relative;left:0px;bottom:0px;width:0%;height:50px; overflow:hidden; border-radius:0px;}
+
+.bar {background: rgb(255,26,97);
+background: linear-gradient(90deg, rgba(255,26,97,1) 0%, rgba(137,0,255,1) 44%, rgba(0,180,255,1) 72%, rgba(0,255,169,1) 100%);width:100%; min-width:1px; height:5px;position:absolute;bottom:0px;left:0px;border-radius:0px 3px 3px 0px;}
+.div {background:rgba(0, 0, 0, 0);width:100%;min-height:calc(100vh - 80px);}
+
+.profileimg {width:100%;border-radius:99em; box-shadow:0 0 18px 1px rgba(0,0,0,0.2); transform: scale(0.6);}
+.cc {margin-top:60px;}
+.top {height:55px;width:100%;position:fixed;left:0px;top:0px;background:#fff;}
+
+.top2 {height:55px;width:100%;position:fixed;left:0px;top:0px;background:#fff; box-shadow:0 0 8px 1px rgba(0,0,0,0.2);display:none;}
+
+.title {font-size:40px;color:#000; text-decoration:none;position:absolute;top:0px;left:0px; font-family: 'Open Sans Condensed', sans-serif;}
+.logo {height:55px; transform: scale(0.85); -webkit-transition:0.5s;transition:0.5s;}
+
+.logo:hover {height:55px; transform: scale(0.85);opacity:0.6;}
+
+.imgbacg {background:#000;height:100%;width:100%;position:fixed;left:0px;top:0px;display:none;}
+
+.menu {height:55px; transform: scale(0.6);position:absolute;right:0px;top:0px;}
+
+.menudiv {
+background:#fff;position:fixed;right:-100%;top:0px;width:100%;height:100%;
+}
+
+.menudivbg {
+background:rgba(0, 0, 0, 0.6);position:fixed;right:0%;top:0px;width:100%;height:100%; display:none;
+}
+
+.button {
+    background-color: #ffffff;
+    border: 5px #212020 solid;
+    color: #212121;
+    padding: 5px 5px;
+    border-radius: 99em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 40px;
+    margin: 30px 2px;
+    cursor: pointer;
+    width:90%;
+
+outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);
+
+font-family: 'Open Sans Condensed', sans-serif;
+
+}
+
+ul {list-style-type: none;position:absolute;top:55px;left:0px;}
+li {background:#fff;width:100vw;height:50px;font-size:40px;margin-top:5px;margin-left:-40px; border-bottom:1px #e3e3e3 solid;padding-bottom:8px;}
+ul a {color:#000; text-decoration:none;}
+</style>
+<body>
+<div class="cc">
+<div id="about" class="div">
+<h1>關於</h1>
+<a href="javascript:image()"><img src="IMG.png" class="profileimg" style=""></a>
+<h3 style="font-size:35px;">嗨！我是每日一學，創立於2019年4月29日，今年<span id="age"></span>歲！</h3><h1>發展歷程</h1><h3 style="font-size:30px;">每日一學是想要打造一個優質的教學影片平台，從最初的Facebook社團，到現在的教學影片、網頁小工具、甚至是LINE AI聊天小幫手⋯⋯<br>這個過程並不容易，雖然有時會遇到問題，但每日一學卻解決了問題，繼續發展自己的社群、小工具、服務⋯⋯<br> 其實當初想的很單純，就只是拍拍教學影片，然後直接上傳，但萬萬沒想到，現在的每日一學，已經不是以前的每日一學了，從教學影片到現在的一切，想像一下，真的不容易⋯⋯</h3>
+
+</div>
+<div><div class="line"></div></div>
+
+
+<div id="things" class="div">
+<h1>項目</h1>
+<div class="barbg"><div class="barbox"><div class="bar"></div><span style="position:absolute;top:50%;left:10px; transform:translate(-0%,-50%); font-family: 'Open Sans Condensed', sans-serif;" id="bartxt">社團貼文</span></div></div>
+
+<div class="barbg"><div class="barbox"><div class="bar"></div><span style="position:absolute;top:50%;left:10px; transform:translate(-0%,-50%); font-family: 'Open Sans Condensed', sans-serif;" id="bartxt">教學影片</span></div></div>
+
+<div class="barbg"><div class="barbox"><div class="bar"></div><span style="position:absolute;top:50%;left:10px; transform:translate(-0%,-50%); font-family: 'Open Sans Condensed', sans-serif;" id="bartxt">小工具</span></div></div>
+
+<div class="barbg"><div class="barbox"><div class="bar"></div><span style="position:absolute;top:50%;left:10px; transform:translate(-0%,-50%); font-family: 'Open Sans Condensed', sans-serif; font-size:25px;" id="bartxt">其他</span></div></div>
+
+</div>
+
+
+<div><div class="line"></div></div>
+
+<div id="media" class="div">
+<h1>社群</h1>
+<center>
+
+<a href="https://www.facebook.com/groups/593405494496067" target="_blank" title="每日一學FB" class="button"> 每日一學FB</a><br>
+
+<a href="https://www.facebook.com/groups/595373134300813" target="_blank" title="聊天室FB" class="button">聊天室FB</a><br>
+
+<a href="https://discord.gg/aUNuhEX" target="_blank" title="Discord" class="button">Discord</a><br>
+
+<a href="https://t.me/joinchat/AAAAAErVKaBuT5kV03SD7w" target="_blank" title="Telegram" class="button">Telegram</a><br>
+
+<a href="https://twitter.com/meiriyixue" target="_blank" title="Twitter" class="button">Twitter</a><br>
+
+<a href="https://www.instagram.com/meiriyixue.cc/" target="_blank" title="instagram" class="button" id="new">instagram</a><br> 
+
+<a href="https://www.youtube.com/channel/UCJ2wMobGzGoZJ_vjsss16zQ" target="_blank" title="YouTube" class="button">YouTube</a><br>
+
+<a href="https://line.me/R/ti/p/@kmv0013w" target="_blank" title="LINE" class="button">LINE</a><br> 
+
+<a href="http://bit.ly/每日一學_問問題" target="_blank" title="問問題FB" class="button">問問題FB</a><br> 
+</center>
+</div>
+
+
+<div><div class="line"></div></div>
+
+<div id="contact" class="div">
+<h1>聯絡</h1>
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdAip-2aS1o0Nqpd7uB7hUzv-3UquY0v4hGwr3h9iSWAX9pzg/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
+
+
+</div>
+
+
+</div>
+
+<div class="top2"></div>
+<div class="top"><a href="javascript:gotos('about','60')" class="title"><img src="meiriyixue.png" class="logo"></a><a href="javascript:menu()" class=""><img src="menu.png" class="menu"></a></div>
+
+<div class="menudivbg"></div>
+
+<div class="menudiv"><a href="javascript:menu()" class=""><img src="menu.png" class="menu" style="display:none;" id="menudiviconon"></a>
+<ul>
+<a href="javascript: closeandgot('about','60')"><li><center>關於</center></li></a>
+<a href="javascript: closeandgot('things','60')"><li><center>項目</center></li></a>
+<a href="javascript: closeandgot('media','60')"><li><center>社群</center></li></a>
+<a href="javascript: closeandgot('contact','60')"><li><center>聯絡</center></li></a>
+</ul>
+
+
+</div>
+
+<div class="imgbacg"></div>
+</body>
+<script>
+
+var today=new Date()
+var yy = today.getFullYear() ;
+$('#age').html(yy-2019);
+
+function gotos(id,t) {
+$('html,body').animate({scrollTop:
+$('#' + id ).offset().top - t },888 , 'easeInOutQuad');
+}
+var ni = 2 ;
+function image() {
+if (ni >"1") {
+
+  $('.imgbacg').fadeIn(555);
+
+var oooo = 'max-height:100%;max-width:100%;width:auto;height:auto;position:fixed;top:50%;left:50%; transform: scale(1) translate(-50%,-50%);border-radius:0px; box-shadow:none;z-index:999999; -webkit-transition:0.222s;transition:0.222s;' ;
+$('.profileimg').attr('style',oooo);
+
+   ni -=2 ;
+   } 
+else {
+   $('.imgbacg').fadeOut(555);
+$('.profileimg').attr('style','-webkit-transition:0.222s;transition:0.222s;');
+    ni +=2 ;
+}
+
+}
+var nii = 2 ;
+function menu() {
+if (nii >"1") {
+  $('.menudivbg').fadeIn(888);
+$('.menudiv').animate({right: 0 + '%'},888 , 'easeInOutQuad');
+$('#menudiviconon').delay(888).fadeIn(333);
+   nii -=2 ;
+   } 
+else {
+   $('.menudivbg').fadeOut(888);
+$('.menudiv').animate({right: -100 + '%'},888 , 'easeInOutQuad');
+$('#menudiviconon').fadeOut(333);
+ nii +=2 ;
+}
+}
+
+function closeandgot(ids,ts) {
+gotos(ids,ts);
+menu();
+}
+</script>
+
+
+<script>
+$(function(){
+	$(window).scroll(function() {
+		if ( $(this).scrollTop() > 10 ){
+			$('.top2').fadeIn(333);
+		} else {
+			$('.top2').fadeOut(333);
+		}
+	}).scroll();
+});
+</script>
+
+<script>
+
+var sec = 1888 ;
+
+$(function(){
+	$(window).scroll(function() {
+		if ( $(this).scrollTop() > $('#things').offset().top-100 ){
+			$('.barbox').eq(0).animate({width: 95 + '%'}, sec , 'easeInOutQuad');
+
+ $('.barbox').eq(1).delay(111*2).animate({width: 69 + '%'}, sec , 'easeInOutQuad');
+
+ $('.barbox').eq(2).delay(111*3).animate({width: 76 + '%'}, sec , 'easeInOutQuad');
+
+ $('.barbox').eq(3).delay(111*4).animate({width: 58 + '%'}, sec , 'easeInOutQuad');
+		} else {
+		}
+	}).scroll();
+});
+</script>
